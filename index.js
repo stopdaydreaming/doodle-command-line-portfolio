@@ -27,23 +27,10 @@ const arrayOfQuestions = [
         message: "Enter your github",
         name: "userGithub"
       }
-]
+];
 
-function init() {
-    console.log('function intialized');
-    //returns a promise
-    inquirer.prompt(arrayOfQuestions).them(response) => {
-        console.log(response);
-        fs.writeFile("index.html", "<h1>test</h1>", (err) => {
-            if(err){console.error(err)}
-            else{console.log("succcess");}
-        })
-    }
-}
-
-function generateHTML(response) {
-const myHTML =
-  `<!DOCTYPE html>
+const htmlStringToWriteToFile = `
+    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -63,24 +50,39 @@ const myHTML =
         <div class="container">
         <div class="row">
             <div class="col-lg-12">
-            <h1 id="user-name">${response.userName}</h1>
-            <h3 id="user-location">${response.userLocation}</h3>
-            <h3>User Bio</h3>
-            <p id="user-bio">
-            ${response.userBio}
+            <h1 id="user-name">User Name</h1>
+            <h3 id="user-location">User Location</h3>
+            <h3 id="user-bio">User Bio</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Consequatur, dolores harum dolorem numquam est earum nulla veritatis
+                consectetur voluptatibus assumenda, suscipit expedita. Quisquam
+                voluptatibus mollitia fugiat laboriosam aut et aspernatur.
             </p>
             <button class="btn btn-primary btn-lg">
-                <a id="user-linkedin" href="${response.userLinkedin}" class="text-white">LinkedIn</a>
+                <a id="user-linkedin" href="#" class="text-white">LinkedIn</a>
                 </button>
             <button class="btn btn-primary btn-lg">
-                <a id="user-github" href="${response.userGithub}" class="text-white">Github</a>
+                <a id="user-github" href="#" class="text-white">Github</a>
                 </button>
             </div>
         </div>
         </div>
     </body>
     </html>
-  `;
-  return myHTML;
+`
+
+function init() {
+    console.log('function intialized');
+    //returns a promise
+    inquirer.prompt(arrayOfQuestions).them(response) => {
+        console.log(response);
+        fs.writeFile("portfolio.html", htmlStringToWriteToFile, (err) => {
+            if(err){console.error(err)}
+            else{console.log("succcess");}
+        })
+    }
 }
+
+
 
