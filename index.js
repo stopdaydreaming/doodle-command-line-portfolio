@@ -43,7 +43,7 @@ inquirer
   );
 
 function generateHTML(response) {
-  return
+const myHTML =
   `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -82,5 +82,6 @@ function generateHTML(response) {
     </body>
     </html>
   `;
+  return myHTML;
 }
 
