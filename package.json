@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/stopdaydreaming/doodle-command-line-html/issues"
   },
-  "homepage": "https://github.com/stopdaydreaming/doodle-command-line-html#readme"
+  "homepage": "https://github.com/stopdaydreaming/doodle-command-line-html#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
 }
