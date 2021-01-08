@@ -1,0 +1,19 @@
+{
+  "name": "doodle-command-line-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stopdaydreaming/doodle-command-line-html.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stopdaydreaming/doodle-command-line-html/issues"
+  },
+  "homepage": "https://github.com/stopdaydreaming/doodle-command-line-html#readme"
+}
