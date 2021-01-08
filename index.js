@@ -1,46 +1,45 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const myHTML = `
-// <html>
-// <body>
-// <h1>hello world</h1>
-// </body>
-// </html>
-// `;
 
-inquirer
-  .prompt([
+const arrayOfQuestions = [
     {
-      type: "input",
-      message: "Enter your name",
-      name: "userName"
-    },
-    {
-      type: "input",
-      message: "Enter your location",
-      name: "userLocation"
-    },
-    {
-      type: "input",
-      message: "Enter your professional bio",
-      name: "userBio"
-    },
-    {
-      type: "input",
-      message: "Enter your linkedin",
-      name: "userLinkedin"
-    },
-    {
-      type: "input",
-      message: "Enter your github",
-      name: "userGithub"
+        type: "input",
+        message: "Enter your name",
+        name: "userName"
+      },
+      {
+        type: "input",
+        message: "Enter your location",
+        name: "userLocation"
+      },
+      {
+        type: "input",
+        message: "Enter your professional bio",
+        name: "userBio"
+      },
+      {
+        type: "input",
+        message: "Enter your linkedin",
+        name: "userLinkedin"
+      },
+      {
+        type: "input",
+        message: "Enter your github",
+        name: "userGithub"
+      }
+]
+
+function init() {
+    console.log('function intialized');
+    //returns a promise
+    inquirer.prompt(arrayOfQuestions).them(response) => {
+        console.log(response);
+        fs.writeFile("index.html", "<h1>test</h1>", (err) => {
+            if(err){console.error(err)}
+            else{console.log("succcess");}
+        })
     }
-  ])
-  .then(response =>
-    fs.writeFile("portfolio.html", generateHTML(response), err =>
-      err ? console.log(err) : console.log("it worked")
-    )
-  );
+}
 
 function generateHTML(response) {
 const myHTML =
