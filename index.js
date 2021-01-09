@@ -33,7 +33,7 @@ const arrayOfQuestions = [
 function init() {
   console.log("function intialized");
   //returns a promise
-  inquirer.prompt(arrayOfQuestions).them(response => {
+  inquirer.prompt(arrayOfQuestions).then(response => {
     console.log(response);
     const dynamicString = generateHTML(response);
     fs.writeFile("portfolio.html", dynamicString, (err) => {
@@ -45,3 +45,5 @@ function init() {
     });
   });
 }
+
+init();

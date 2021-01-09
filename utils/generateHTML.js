@@ -1,4 +1,4 @@
-const generateHTML = () => {
+const generateHTML = (data) => {
     const htmlStringToWriteToFile = `
       <!DOCTYPE html>
       <html lang="en">
@@ -20,9 +20,9 @@ const generateHTML = () => {
           <div class="container">
           <div class="row">
               <div class="col-lg-12">
-              <h1 id="user-name">${name}</h1>
-              <h3 id="user-location">${location}</h3>
-              <h3 id="user-bio">${bio}</h3>
+              <h1 id="user-name">${data.name}</h1>
+              <h3 id="user-location">${data.location}</h3>
+              <h3 id="user-bio">${data.bio}</h3>
               <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Consequatur, dolores harum dolorem numquam est earum nulla veritatis
@@ -30,10 +30,10 @@ const generateHTML = () => {
                   voluptatibus mollitia fugiat laboriosam aut et aspernatur.
               </p>
               <button class="btn btn-primary btn-lg">
-                  <a id="user-linkedin" href="${linkedin}" class="text-white">LinkedIn</a>
+                  <a id="user-linkedin" href="${data.linkedin}" class="text-white">LinkedIn</a>
                   </button>
               <button class="btn btn-primary btn-lg">
-                  <a id="user-github" href="${github}" class="text-white">Github</a>
+                  <a id="user-github" href="${data.github}" class="text-white">Github</a>
                   </button>
               </div>
           </div>
@@ -43,3 +43,5 @@ const generateHTML = () => {
   `;
     return htmlStringToWriteToFile;
   };
+
+  module.exports = generateHTML;
